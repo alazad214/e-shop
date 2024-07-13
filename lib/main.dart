@@ -1,7 +1,8 @@
-import 'package:e_shop/screens/home_screen.dart';
-import 'package:e_shop/screens/splash.dart';
+
+import 'package:e_shop/pages/onboading.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(
@@ -14,9 +15,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return const GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Splash(),
+      home: Onboading()
     );
   }
 }
