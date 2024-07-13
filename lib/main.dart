@@ -1,4 +1,5 @@
 
+import 'package:e_shop/pages/home.dart';
 import 'package:e_shop/pages/onboading.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Onboading()
+      home: Home()
     );
   }
 }
