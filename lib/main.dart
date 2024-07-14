@@ -1,6 +1,6 @@
-
-import 'package:e_shop/pages/home.dart';
-import 'package:e_shop/pages/onboading.dart';
+import 'package:e_shop/auth/login.dart';
+import 'package:e_shop/pages/bottomNav.dart';
+import 'package:e_shop/pages/product_details.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -16,9 +16,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const GetMaterialApp(
+    return  const GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Home()
+      home: Login()
     );
   }
 }

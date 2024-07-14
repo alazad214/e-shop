@@ -6,4 +6,8 @@ class CustomTextstyle {
     return const TextStyle(
         color: Colors.black, fontSize: 25, fontWeight: FontWeight.w600);
   }
+
+  static TextStyle grayFontStyle() {
+    return const TextStyle(color: Colors.grey, fontSize: 18);
+  }
 }
