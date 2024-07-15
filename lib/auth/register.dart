@@ -33,7 +33,7 @@ class Register extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Text(
-                  "Sign up",
+                  "Register",
                   style: TextStyle(color: Colors.white, fontSize: 18),
                 ),
                 const Text(
@@ -89,7 +89,7 @@ class Register extends StatelessWidget {
                       onTap: (){
                         Get.off(()=>const Login());
                       },
-                      child: const Text("Sign in",  style: TextStyle(
+                      child: const Text("Log in",  style: TextStyle(
                           color: Colors.amberAccent,
                           fontWeight: FontWeight.w600,
                           fontSize: 16

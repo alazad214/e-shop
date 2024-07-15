@@ -34,7 +34,7 @@ class Login extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Text(
-                  "Sign in",
+                  "Log in",
                   style: TextStyle(color: Colors.white, fontSize: 18),
                 ),
                 const Text(
@@ -80,12 +80,12 @@ class Login extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Text("You have no account?"),
+                    const Text("You have no account? "),
                     InkWell(
                       onTap: (){
                         Get.off(()=>const Register());
                       },
-                      child: const Text("Sign Up",  style: TextStyle(
+                      child: const Text("Register",  style: TextStyle(
                           color: Colors.amberAccent,
                           fontWeight: FontWeight.w600,
                           fontSize: 16
