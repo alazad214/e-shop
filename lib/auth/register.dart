@@ -130,7 +130,7 @@ class Register extends StatelessWidget {
                             const Text("Already have an account? "),
                             InkWell(
                               onTap: () {
-                                Get.off(() => const Login());
+                                Get.off(() => Login());
                               },
                               child: const Text("Log in",
                                   style: TextStyle(

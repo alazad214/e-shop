@@ -38,7 +38,7 @@ class Onboading2 extends StatelessWidget {
                 CustomButton(
                   text: "Log In",
                   ontap: (){
-                    Get.to(()=>const Login());
+                    Get.to(()=> Login());
                   },
                 ),
                 const SizedBox(height: 20,),

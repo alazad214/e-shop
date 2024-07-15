@@ -1,11 +1,14 @@
 import 'package:e_shop/auth/register.dart';
+import 'package:e_shop/controllers/auth_controller.dart';
 import 'package:e_shop/widgets/custom_button.dart';
 import 'package:e_shop/widgets/custom_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class Login extends StatelessWidget {
-  const Login({super.key});
+  Login({super.key});
+
+  final controller = Get.put(AuthController());
 
   @override
   Widget build(BuildContext context) {
@@ -14,8 +17,15 @@ class Login extends StatelessWidget {
       backgroundColor: Colors.white70,
       appBar: AppBar(
         backgroundColor: Colors.black,
-        leading: IconButton(onPressed: (){Navigator.pop(context);
-        }, icon: const Icon(Icons.arrow_back_ios, color: Colors.blue,size: 30,)),
+        leading: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: const Icon(
+              Icons.arrow_back_ios,
+              color: Colors.blue,
+              size: 30,
+            )),
       ),
       body: SafeArea(
         child: Container(
@@ -46,8 +56,7 @@ class Login extends StatelessWidget {
                         const Center(
                           child: Text(
                             "Log in",
-                            style:
-                            TextStyle(color: Colors.white, fontSize: 18),
+                            style: TextStyle(color: Colors.white, fontSize: 18),
                           ),
                         ),
                         const Text(
@@ -68,15 +77,20 @@ class Login extends StatelessWidget {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-                              const CustomTextfield(
+                              CustomTextfield(
                                 hinttext: "Enter your email",
+                                onchanged: (email) {
+                                  controller.email.value = email;
+                                },
                               ),
-                              const CustomTextfield(
+                              CustomTextfield(
                                 hinttext: "Enter your password",
                                 issecured: true,
-                                icon: Icon(Icons.remove_red_eye),
+                                icon: const Icon(Icons.remove_red_eye),
+                                onchanged: (password) {
+                                  controller.password.value = password;
+                                },
                               ),
-
                               const Align(
                                 alignment: Alignment.centerRight,
                                 child: Text(
@@ -86,6 +100,9 @@ class Login extends StatelessWidget {
                               ),
                               CustomButton(
                                 text: "Log in",
+                                ontap: () {
+                                  controller.login();
+                                },
                               )
                             ],
                           ),
@@ -97,8 +114,7 @@ class Login extends StatelessWidget {
                             const Text("Already have an account? "),
                             InkWell(
                               onTap: () {
-                                Get.off(() =>
-                                    Register());
+                                Get.off(() => Register());
                               },
                               child: const Text("Register",
                                   style: TextStyle(
