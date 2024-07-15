@@ -1,4 +1,5 @@
 import 'package:e_shop/auth/login.dart';
+import 'package:e_shop/controllers/auth_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -6,7 +7,8 @@ import '../widgets/custom_button.dart';
 import '../widgets/custom_textfield.dart';
 
 class Register extends StatelessWidget {
-  const Register({super.key});
+  Register({super.key});
+  final controller = Get.put(AuthController());
 
   @override
   Widget build(BuildContext context) {
@@ -14,10 +16,16 @@ class Register extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.black,
-        leading: IconButton(onPressed: (){Navigator.pop(context);
-        }, icon: const Icon(Icons.arrow_back_ios, color: Colors.blue,size: 30,)),
+        leading: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: const Icon(
+              Icons.arrow_back_ios,
+              color: Colors.blue,
+              size: 30,
+            )),
       ),
-
       body: SafeArea(
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 20),
@@ -47,8 +55,7 @@ class Register extends StatelessWidget {
                         const Center(
                           child: Text(
                             "Register",
-                            style:
-                                TextStyle(color: Colors.white, fontSize: 18),
+                            style: TextStyle(color: Colors.white, fontSize: 18),
                           ),
                         ),
                         const Text(
@@ -69,21 +76,36 @@ class Register extends StatelessWidget {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-                              const CustomTextfield(
+                              CustomTextfield(
                                 hinttext: "Enter your name",
-                                icon: Icon(Icons.drive_file_rename_outline),
-                              ),  const CustomTextfield(
-                                hinttext: "Enter your email",
+                                icon:
+                                    const Icon(Icons.drive_file_rename_outline),
+                                onchanged: (name) {
+                                  controller.name.value = name;
+                                },
                               ),
-                              const CustomTextfield(
+                              CustomTextfield(
+                                hinttext: "Enter your email",
+                                onchanged: (email) {
+                                  controller.email.value = email;
+                                },
+                              ),
+                              CustomTextfield(
                                 hinttext: "Enter your password",
                                 issecured: true,
-                                icon: Icon(Icons.remove_red_eye),
+                                icon: const Icon(Icons.remove_red_eye),
+                                onchanged: (password) {
+                                  controller.password.value = password;
+                                },
                               ),
-                              const CustomTextfield(
+                              CustomTextfield(
                                 hinttext: "Confirm your password",
                                 issecured: true,
-                                icon: Icon(Icons.remove_red_eye),
+                                icon: const Icon(Icons.remove_red_eye),
+                                onchanged: (confirmpassword) {
+                                  controller.confirmpassword.value =
+                                      confirmpassword;
+                                },
                               ),
                               const Align(
                                 alignment: Alignment.centerRight,
@@ -94,6 +116,9 @@ class Register extends StatelessWidget {
                               ),
                               CustomButton(
                                 text: "Sign Up",
+                                ontap: () {
+                                  controller.register();
+                                },
                               )
                             ],
                           ),

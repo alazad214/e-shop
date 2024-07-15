@@ -97,7 +97,8 @@ class Login extends StatelessWidget {
                             const Text("Already have an account? "),
                             InkWell(
                               onTap: () {
-                                Get.off(() => const Register());
+                                Get.off(() =>
+                                    Register());
                               },
                               child: const Text("Register",
                                   style: TextStyle(

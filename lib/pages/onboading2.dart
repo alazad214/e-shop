@@ -45,7 +45,7 @@ class Onboading2 extends StatelessWidget {
                 CustomButton(
                   text: "Register",
                   ontap: (){
-                    Get.to(()=>const Register());
+                    Get.to(()=> Register());
                   },
                 ),
               ],
