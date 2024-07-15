@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "161217649054",
+    "project_id": "plated-hash-405713",
+    "storage_bucket": "plated-hash-405713.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:161217649054:android:d53af40de5722dd2ca1e8f",
+        "android_client_info": {
+          "package_name": "com.example.e_shop"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIj0UonVUg4zIOMx2PEZlfhxmAqpNyJ_o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
