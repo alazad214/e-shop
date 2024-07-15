@@ -5,7 +5,9 @@ class CustomTextfield extends StatelessWidget {
   final String? hinttext;
   final icon;
   final bool? issecured;
-  const CustomTextfield({super.key, this.hinttext, this.icon, this.issecured});
+  final onchanged;
+  const CustomTextfield(
+      {super.key, this.hinttext, this.icon, this.issecured, this.onchanged});
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +20,7 @@ class CustomTextfield extends StatelessWidget {
           borderRadius: BorderRadius.circular(10)),
       child: TextFormField(
         obscureText: issecured ?? false,
+        onChanged: onchanged,
         decoration: InputDecoration(
             border: InputBorder.none,
             hintText: hinttext,
